@@ -1,0 +1,3 @@
+1,k,k,Customer
+2,s,s,Customer
+3,g,g,Customer
