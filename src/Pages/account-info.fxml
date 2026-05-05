@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_LEFT" spacing="12"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="AccountInfoController">
+
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <!-- Centered Title -->
+    <Label text="Account Info"
+           maxWidth="Infinity"
+           alignment="CENTER"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+    <!-- Left-aligned content -->
+    <Label fx:id="userIdLabel"/>
+    <Label fx:id="usernameLabel"/>
+    <Label fx:id="roleLabel"/>
+    <Label fx:id="accountIdLabel"/>
+    <Label fx:id="balanceLabel"/>
+    <Label fx:id="statusLabel"/>
+
+    <Button text="Back"
+            prefWidth="220"
+            onAction="#handleBack"/>
+
+</VBox>

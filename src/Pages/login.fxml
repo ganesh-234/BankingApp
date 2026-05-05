@@ -1,40 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="15.0"
+<VBox alignment="CENTER" spacing="12"
       xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="LoginController">
 
     <padding>
-        <Insets top="30" right="30" bottom="30" left="30"/>
+        <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
 
     <Label text="Customer Login"
            style="-fx-font-size: 22px; -fx-font-weight: bold;" />
 
+
     <TextField fx:id="usernameField"
-               promptText="Enter Username"
-               prefWidth="220"/>
+               promptText="Username"
+               prefWidth="220" />
 
     <PasswordField fx:id="passwordField"
-                   promptText="Enter Password"
-                   prefWidth="220"/>
+                   promptText="Password"
+                   prefWidth="220" />
 
     <Button text="Login"
             prefWidth="220"
-            onAction="#handleLogin"/>
+            onAction="#handleLogin" />
 
     <Button text="Back"
             prefWidth="220"
-            onAction="#handleBack"/>
+            onAction="#handleBack" />
 
-    <Label fx:id="messageLabel" text=""/>
+    <Label fx:id="messageLabel"
+           style="-fx-text-fill: red;" />
 
 </VBox>

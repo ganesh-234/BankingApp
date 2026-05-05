@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" spacing="12"
+      xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="AdminDashboardController">
+
+    <padding>
+        <Insets top="25" right="25" bottom="25" left="25"/>
+    </padding>
+
+    <Label text="Admin Dashboard"
+           style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+
+    <Label fx:id="adminLabel"/>
+
+    <TextField fx:id="userIdField"
+               promptText="Enter User ID"
+               prefWidth="220"/>
+
+    <Button text="Freeze Account"
+            prefWidth="220"
+            onAction="#handleFreeze"/>
+
+    <Button text="Unfreeze Account"
+            prefWidth="220"
+            onAction="#handleUnfreeze"/>
+
+    <Button text="View Users"
+            prefWidth="220"
+            onAction="#handleViewUsers"/>
+
+    <TextField fx:id="transactionIdField"
+               promptText="Enter Transaction ID"
+               prefWidth="220"/>
+
+    <Button text="View Flagged Transactions"
+            prefWidth="220"
+            onAction="#handleViewFlaggedTransactions"/>
+
+    <Button text="Mark Transaction Reviewed"
+            prefWidth="220"
+            onAction="#handleMarkReviewed"/>
+
+    <TextArea fx:id="outputArea"
+              prefWidth="340"
+              prefHeight="180"
+              editable="false"/>
+
+    <Button text="Logout"
+            prefWidth="220"
+            onAction="#handleLogout"/>
+
+</VBox>

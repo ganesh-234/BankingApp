@@ -17,6 +17,8 @@ public class CreateAccountController {
     @FXML
     private Label messageLabel;
 
+    private BankAccountManager bankAccountManager = new BankAccountManager();
+
     private UserManager userManager = new UserManager();
 
     private void switchScene(String fxmlFile) {
@@ -42,6 +44,12 @@ public class CreateAccountController {
         boolean success = userManager.registerCustomer(username, password);
 
         if (success) {
+            User newUser = userManager.loginCustomer(username, password);
+
+            if (newUser != null) {
+                bankAccountManager.createAccountForUser(newUser.getUserId());
+            }
+
             messageLabel.setText("Customer account created successfully.");
             clearFields();
         } else {

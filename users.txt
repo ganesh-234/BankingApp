@@ -1,3 +1,4 @@
-1,k,k,Customer
-2,s,s,Customer
-3,g,g,Customer
+1,admin,admin,Admin
+2,w,w,Customer
+3,k,k,Customer
+4,dwasd@,w,Customer

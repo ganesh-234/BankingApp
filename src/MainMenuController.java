@@ -27,11 +27,13 @@ public class MainMenuController {
 
     @FXML
     private void handleAdminLogin() {
-        System.out.println("Admin login not implemented yet.");
+        switchScene("Pages/admin-login.fxml");
     }
 
     @FXML
     private void handleExit() {
         System.exit(0);
     }
+
+
 }

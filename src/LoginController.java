@@ -19,11 +19,15 @@ public class LoginController {
 
     private UserManager userManager = new UserManager();
 
+    // Scene switch WITHOUT fixed size
     private void switchScene(String fxmlFile) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
             Scene scene = new Scene(root);
+
             BankingApp.mainStage.setScene(scene);
+            scene.getRoot().requestFocus();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -42,9 +46,37 @@ public class LoginController {
         User user = userManager.loginCustomer(username, password);
 
         if (user != null) {
-            messageLabel.setText("Login successful. Welcome, " + user.getUsername() + "!");
+            BankAccountManager bankAccountManager = new BankAccountManager();
+            BankAccount account = bankAccountManager.getAccountByUserId(user.getUserId());
+
+            // Auto-create account if missing
+            if (account == null) {
+                bankAccountManager.createAccountForUser(user.getUserId());
+                account = bankAccountManager.getAccountByUserId(user.getUserId());
+            }
+
+            loadCustomerDashboard(user, account);
+
         } else {
             messageLabel.setText("Invalid customer username or password.");
+        }
+    }
+
+    private void loadCustomerDashboard(User user, BankAccount account) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Pages/customer-dashboard.fxml"));
+            Parent root = loader.load();
+
+            CustomerDashboardController controller = loader.getController();
+            controller.setData(user, account);
+
+            Scene scene = new Scene(root);
+
+            BankingApp.mainStage.setScene(scene);
+            scene.getRoot().requestFocus();
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class BankingApp extends Application {
+
     public static Stage mainStage;
 
     @Override
@@ -15,8 +16,9 @@ public class BankingApp extends Application {
         Scene scene = new Scene(root);
 
         mainStage.setTitle("Distributed Banking System");
-        scene.getRoot().requestFocus();
         mainStage.setScene(scene);
+
+        scene.getRoot().requestFocus();
         mainStage.show();
     }
 

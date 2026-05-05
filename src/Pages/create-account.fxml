@@ -1,40 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="15.0"
+<VBox alignment="CENTER" spacing="12"
       xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="CreateAccountController">
 
     <padding>
-        <Insets top="30" right="30" bottom="30" left="30"/>
+        <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
 
-    <Label text="Create Customer Account"
-           style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+    <Label text="Create Account"
+           style="-fx-font-size: 20px; -fx-font-weight: bold;" />
 
-    <TextField fx:id="usernameField"
-               promptText="Enter Username"
-               prefWidth="220"/>
+    <TextField fx:id="usernameField" promptText="Username" prefWidth="220"/>
+    <PasswordField fx:id="passwordField" promptText="Password" prefWidth="220"/>
 
-    <PasswordField fx:id="passwordField"
-                   promptText="Enter Password"
-                   prefWidth="220"/>
+    <Button text="Create Account" prefWidth="220" onAction="#handleCreateAccount"/>
+    <Button text="Back" prefWidth="220" onAction="#handleBack"/>
 
-    <Button text="Create Account"
-            prefWidth="220"
-            onAction="#handleCreateAccount"/>
-
-    <Button text="Back"
-            prefWidth="220"
-            onAction="#handleBack"/>
-
-    <Label fx:id="messageLabel" text=""/>
+    <Label fx:id="messageLabel"/>
 
 </VBox>

@@ -1,3 +1,8 @@
+/*
+ * User represents login information for both customers and admins.
+ * The role field determines whether the user is a Customer, Admin
+ */
+
 public class User {
     private int userId;
     private String username;
@@ -27,6 +32,7 @@ public class User {
         return role;
     }
 
+    // Checks whether entered login credentials match this user.
     public boolean login(String username, String password) {
         return this.username.equals(username) && this.password.equals(password);
     }

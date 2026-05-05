@@ -7,18 +7,21 @@
 <VBox alignment="CENTER" spacing="12"
       xmlns="http://javafx.com/javafx/21"
       xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="MainMenuController">
+      fx:controller="AdminLoginController">
 
     <padding>
         <Insets top="25" right="25" bottom="25" left="25"/>
     </padding>
 
-    <Label text="Distributed Banking System"
+    <Label text="Admin Login"
            style="-fx-font-size: 20px; -fx-font-weight: bold;" />
 
-    <Button text="User Login" prefWidth="220" onAction="#handleUserLogin"/>
-    <Button text="Create Account" prefWidth="220" onAction="#handleCreateAccount"/>
-    <Button text="Admin Login" prefWidth="220" onAction="#handleAdminLogin"/>
-    <Button text="Exit" prefWidth="220" onAction="#handleExit"/>
+    <TextField fx:id="usernameField" promptText="Username" prefWidth="220"/>
+    <PasswordField fx:id="passwordField" promptText="Password" prefWidth="220"/>
+
+    <Button text="Login" prefWidth="220" onAction="#handleLogin"/>
+    <Button text="Back" prefWidth="220" onAction="#handleBack"/>
+
+    <Label fx:id="messageLabel"/>
 
 </VBox>
